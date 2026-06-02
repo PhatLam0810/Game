@@ -1,6 +1,9 @@
 'use client';
 import { Button } from 'antd';
-import styles from './GameHeader.module.scss';
+import styles from './styles.module.scss';
+import { title } from 'process';
+import Image from 'next/image';
+import { Logo } from '@/public/images';
 
 const navItems = [
   { label: 'Trang Chủ', active: false },
@@ -14,13 +17,13 @@ export default function GameHeader() {
   return (
     <header className={styles.root}>
       <div className={styles.container}>
-        <div className={styles.brand}>
-          <div className={styles.logo}>my</div>
-          <div>
-            <span className={styles.brandTitle}>MyE</span>
-            <span className={styles.brandSubtitle}>Game Portal</span>
-          </div>
-        </div>
+        <Image
+          src={Logo}
+          width={120}
+          height={80}
+          alt={'Logo'}
+          className={styles.logo}
+        />
 
         <nav className={styles.nav}>
           {navItems.map(item => (

@@ -2,8 +2,8 @@
 import React, { useMemo, useState } from 'react';
 import Image from 'next/image';
 import { Button } from 'antd';
-import GameHeader from '../../components/header/GameHeader';
-import GameFooter from '../../components/footer/GameFooter';
+import GameHeader from '../../components/header';
+import GameFooter from '../../components/footer';
 import { GameCard } from './components';
 import styles from './styles.module.scss';
 import {
@@ -107,7 +107,7 @@ export default function GameScreen() {
           <div className={styles.cardGrid}>
             {NEW_RELEASES.map(game => (
               <div key={game.title} className={styles.cardItem}>
-                <GameCard {...game} />
+                <GameCard badge={''} {...game} />
               </div>
             ))}
           </div>

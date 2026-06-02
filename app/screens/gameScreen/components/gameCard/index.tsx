@@ -21,7 +21,6 @@ const GameCard: React.FC<GameCardProps> = ({
   description,
   category,
   image,
-  status,
   badge,
 }) => {
   return (
@@ -38,13 +37,8 @@ const GameCard: React.FC<GameCardProps> = ({
 
       <Card className={styles.card} hoverable>
         <div className={styles.header}>
-          <Title level={4} className={styles.title}>
-            {title}
-          </Title>
-          <div className={styles.subTitle}>{category ?? 'THỂ LOẠI'}</div>
-          {description ? (
-            <Paragraph className={styles.description}>{description}</Paragraph>
-          ) : null}
+          <div className={styles.title}>{title}</div>
+          <div className={styles.subTitle}>{category}</div>
         </div>
 
         <div className={styles.cover}>
@@ -61,10 +55,13 @@ const GameCard: React.FC<GameCardProps> = ({
 
         <div className={styles.footer}>
           <button type="button" className={styles.actionButton}>
-            <HomeOutlined /> Trang Chủ
+            <HomeOutlined />
+            <p className={styles.actionText}>Trang Chủ</p>
           </button>
+          <div className={styles.borderRight}></div>
           <button type="button" className={styles.actionButton}>
-            <DownloadOutlined /> Tải xuống
+            <DownloadOutlined />
+            <p className={styles.actionText}>Tải xuống</p>
           </button>
         </div>
       </Card>
