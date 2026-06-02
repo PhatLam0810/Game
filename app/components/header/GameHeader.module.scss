@@ -1,0 +1,93 @@
+.root {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.brandTitle {
+  display: block;
+  color: var(--color-primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.brandSubtitle {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.navLink {
+  color: var(--color-primary);
+  transition: color 0.2s ease;
+  font-weight: 600;
+  padding-bottom: 4px;
+}
+
+.navLink:hover {
+  color: var(--color-active);
+}
+
+.activeLink {
+  color: var(--color-active);
+  border-bottom: 3px solid var(--color-active);
+}
+
+.loginButton {
+  border-radius: 999px;
+  background: var(--color-active);
+  border-color: var(--color-active);
+  color: #ffffff;
+}
+
+.loginButton:hover {
+  background: #ff7f1f;
+  border-color: #ff7f1f;
+}
+
+@media (max-width: 860px) {
+  .nav {
+    display: none;
+  }
+}
