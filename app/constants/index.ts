@@ -18,10 +18,10 @@ export const NAV_ITEMS = [
 ];
 
 export const SERVICE_CARDS = [
-  { title: 'MYE COIN', icon: MY_ICON },
-  { title: 'GIFT CODE', icon: GIFT_ICON },
-  { title: 'VIP CLUB', icon: CROWN_ICON },
-  { title: 'TÀI KHOẢN', icon: PROFILE_ICON },
+  { title: 'MYE COIN', icon: '/images/My.png' },
+  { title: 'GIFT CODE', icon: '/images/Gift.png' },
+  { title: 'VIP CLUB', icon: '/images/Crown.png' },
+  { title: 'TÀI KHOẢN', icon: '/images/Profile.png' },
 ];
 
 export const FILTERS = [
