@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "next": "16.2.7",
+    "prettierrc": "^0.0.0-5",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
