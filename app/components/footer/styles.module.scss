@@ -1,47 +1,91 @@
 .footer {
-  border-top: 1px solid var(--color-border);
-  background: var(--color-background);
-  padding: 32px 20px;
+  background: #92929233;
+  padding: 48px 20px 32px;
 }
 
 .content {
-  max-width: 1320px;
+  max-width: 820px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
+  gap: 16px;
+  text-align: center;
 }
 
-.brand {
+.logo {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.contactLine {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #4b587c;
+  font-size: 0.95rem;
+}
+
+.companyInfo {
   display: flex;
   flex-direction: column;
   gap: 6px;
-}
-
-.brandTitle {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.brandSub {
+  color: #4b587c;
   font-size: 0.95rem;
-  color: var(--color-muted);
+  line-height: 1.7;
 }
 
-.links {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.link {
+.companyName {
+  margin: 0;
+  font-weight: 700;
   color: #0f4ac6;
+  letter-spacing: 0.06em;
+}
+
+.companyInfo p {
+  margin: 0;
+}
+
+.policyLinks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4b587c;
+  font-size: 0.95rem;
+}
+
+.policyLinks a {
+  color: #4b587c;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.link:hover {
-  color: var(--color-active);
+.policyLinks a:hover {
+  color: #0f4ac6;
+}
+
+.separator {
+  color: #b0b8c9;
+}
+
+.copy {
+  margin: 0;
+  color: #7a8392;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 720px) {
+  .footer {
+    padding: 36px 16px 24px;
+  }
+
+  .content {
+    gap: 14px;
+  }
+
+  .contactLine,
+  .companyInfo,
+  .policyLinks {
+    font-size: 0.9rem;
+  }
 }

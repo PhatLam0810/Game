@@ -1,5 +1,5 @@
 'use client';
-import { Card, Typography } from 'antd';
+import { Card } from 'antd';
 import { DownloadOutlined, HomeOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import styles from './styles.module.scss';
@@ -7,18 +7,14 @@ import { GameHot } from '@/public/images';
 
 type GameCardProps = {
   title: string;
-  description?: string;
   category: string;
   image: string;
   status: string;
   badge: string;
 };
 
-const { Title, Paragraph } = Typography;
-
 const GameCard: React.FC<GameCardProps> = ({
   title,
-  description,
   category,
   image,
   badge,

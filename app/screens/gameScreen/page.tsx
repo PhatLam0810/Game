@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Button } from 'antd';
 import GameHeader from '../../components/header';
 import GameFooter from '../../components/footer';
-import { GameCard } from './components';
+import { GameCard, GameCardPopular } from './components';
 import styles from './styles.module.scss';
 import {
   FILTERS,
@@ -121,10 +121,8 @@ export default function GameScreen() {
           </div>
           <div className={styles.spotlightGrid}>
             {SPOTLIGHT_GAMES.map(item => (
-              <div key={item.title} className={styles.spotlightCard}>
-                <div className={styles.spotlightTag}>{item.tag}</div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+              <div key={item.title} className={styles.cardItem}>
+                <GameCardPopular {...item} />
               </div>
             ))}
           </div>

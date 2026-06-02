@@ -125,18 +125,33 @@ export const NEW_RELEASES = [
 
 export const SPOTLIGHT_GAMES = [
   {
-    title: 'Hào Khí Chiến Hồn',
-    description: 'Phiên bản cập nhật mới nhất.',
-    tag: 'GAME NỔI BẬT',
+    title: 'Hào Khí Du Hiệp',
+    category: 'Adventure',
+    status: 'NEW',
+    image: '/images/GAME NỔI BẬT (4).jpg',
   },
   {
-    title: 'Hào Khí Du Hiệp',
-    description: 'Cốt truyện mới mở rộng.',
-    tag: 'GAME NỔI BẬT',
+    title: 'Boom Tank',
+    category: 'Action',
+    status: 'HOT',
+    image: '/images/GAME NỔI BẬT (3).png',
   },
   {
     title: 'Hào Khí Tam Quốc',
-    description: 'Thách thức chiến thuật sâu sắc.',
-    tag: 'GAME NỔI BẬT',
+    category: 'Strategy',
+    status: 'NEW',
+    image: '/images/GAME NỔI BẬT (1).png',
+  },
+  {
+    title: 'Hào Khí Chiến Hồn',
+    category: 'RPG',
+    status: 'HOT',
+    image: '/images/GAME NỔI BẬT (2).png',
+  },
+  {
+    title: 'Hào Khí Chiến Hồn',
+    category: 'RPG',
+    status: 'HOT',
+    image: '/images/GAME NỔI BẬT (2).png',
   },
 ];
