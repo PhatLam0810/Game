@@ -3,9 +3,9 @@ import React, { useMemo, useState } from 'react';
 import Image from 'next/image';
 import { Button } from 'antd';
 import GameHeader from '../../components/header/GameHeader';
-import GameFooter from '../../components/foodter/GameFooter';
+import GameFooter from '../../components/footer/GameFooter';
 import { GameCard } from './components';
-import styles from './page.module.scss';
+import styles from './styles.module.scss';
 import {
   FILTERS,
   SERVICE_CARDS,
@@ -19,12 +19,14 @@ export default function GameScreen() {
   const [showMore, setShowMore] = useState(false);
 
   const filteredGames = useMemo(() => {
-    const data = showMore ? GAME_LIST : GAME_LIST.slice(0, 4);
-    return activeFilter === 'Tất cả'
-      ? data
-      : data.filter(game => game.category === activeFilter);
-  }, [activeFilter, showMore]);
+    const filtered =
+      activeFilter === 'Tất cả'
+        ? GAME_LIST
+        : GAME_LIST.filter(game => game.category === activeFilter);
 
+    return showMore ? filtered : filtered.slice(0, 4);
+  }, [activeFilter, showMore]);
+  console.log('filteredGames', filteredGames);
   return (
     <div className={styles.page}>
       <GameHeader />
@@ -32,28 +34,22 @@ export default function GameScreen() {
       <main className={styles.main}>
         <section className={styles.heroSection}>
           <div className={styles.titleBlock}>
-            <p className={styles.label}>DỊCH VỤ</p>
-            <h1>Game portal giống giao diện MyE.</h1>
-            <p className={styles.lead}>
-              Nền trắng, chữ xanh, active cam và danh sách game mở rộng khi bấm
-              Xem thêm.
-            </p>
-          </div>
-
-          <div className={styles.serviceBar}>
-            {SERVICE_CARDS.map(service => (
-              <div key={service.title} className={styles.serviceItem}>
-                <div className={styles.serviceIcon}>
-                  <Image
-                    src={service.icon}
-                    alt={service.title}
-                    width={24}
-                    height={24}
-                  />
+            <p className={styles.subTitle}>DỊCH VỤ</p>
+            <div className={styles.serviceBar}>
+              {SERVICE_CARDS.map(service => (
+                <div key={service.title} className={styles.serviceItem}>
+                  <div className={styles.serviceIcon}>
+                    <Image
+                      src={service.icon}
+                      alt={service.title}
+                      width={24}
+                      height={24}
+                    />
+                  </div>
+                  <span>{service.title}</span>
                 </div>
-                <span>{service.title}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
@@ -61,7 +57,6 @@ export default function GameScreen() {
           <div className={styles.sectionHeader}>
             <div>
               <p className={styles.subTitle}>DANH SÁCH GAME</p>
-              <h2>Danh sách game</h2>
             </div>
             <Button
               type="link"
@@ -81,7 +76,12 @@ export default function GameScreen() {
                 }`}
                 onClick={() => setActiveFilter(filter.label)}>
                 <span>{filter.label}</span>
-                <span className={styles.filterCount}>{filter.count}</span>
+                <span
+                  className={`${styles.filterCount} ${
+                    activeFilter === filter.label ? styles.activeCount : ''
+                  }`}>
+                  {filter.count}
+                </span>
               </button>
             ))}
           </div>
@@ -99,7 +99,6 @@ export default function GameScreen() {
           <div className={styles.sectionHeader}>
             <div>
               <p className={styles.subTitle}>GAME MỚI PHÁT HÀNH</p>
-              <h2>Ra mắt và sắp ra mắt</h2>
             </div>
             <Button type="link" className={styles.viewMoreButton}>
               Xem thêm
@@ -118,7 +117,6 @@ export default function GameScreen() {
           <div className={styles.sectionHeader}>
             <div>
               <p className={styles.subTitle}>GAME NỔI BẬT</p>
-              <h2>Top game đáng chơi</h2>
             </div>
           </div>
           <div className={styles.spotlightGrid}>

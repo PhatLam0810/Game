@@ -5,6 +5,11 @@
   background: #ffffff;
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
 }
+.card:hover {
+  border-color: #ff7900;
+  box-shadow: 0 24px 60px rgba(255, 121, 0, 0.12);
+  background: #ff7900;
+}
 
 .cover {
   position: relative;
@@ -23,6 +28,14 @@
     180deg,
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 0.32) 100%
+  );
+}
+
+.card:hover .coverOverlay {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 121, 0, 0) 0%,
+    rgba(255, 121, 0, 0.42) 100%
   );
 }
 
@@ -54,6 +67,11 @@
   letter-spacing: 0.14em;
 }
 
+.card:hover .category {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
 .body {
   padding: 22px;
 }
@@ -77,15 +95,28 @@
   text-transform: uppercase;
 }
 
+.card:hover .actionTag {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
 .title {
   margin: 16px 0 10px;
   color: #093a88 !important;
+}
+
+.card:hover .title {
+  color: #ffffff !important;
 }
 
 .description {
   margin: 0;
   color: #4b587c !important;
   line-height: 1.75;
+}
+
+.card:hover .description {
+  color: rgba(255, 255, 255, 0.95) !important;
 }
 
 .footer {
@@ -112,4 +143,10 @@
 .actionButton:hover {
   border-color: #ff7900;
   color: #ff7900;
+}
+
+.card:hover .actionButton {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
