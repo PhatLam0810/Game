@@ -19,7 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/public/images": ["./public/images/index.ts"],
+      "@/public/*": ["./public/*"]
     }
   },
   "include": [

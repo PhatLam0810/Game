@@ -1,9 +1,21 @@
+.container {
+  position: relative;
+  width: 100%;
+}
 .card {
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid #dce4f2;
   background: #ffffff;
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  &:hover {
+    .image {
+      transform: scale(1.08);
+    }
+  }
+}
+.header {
+  position: relative;
 }
 .card:hover {
   border-color: #ff7900;
@@ -15,42 +27,25 @@
   position: relative;
   min-height: 220px;
   background: #f4f7ff;
+  overflow: hidden;
 }
 
 .image {
   object-fit: cover;
+  transition: transform 0.4s ease;
+  overflow: hidden;
 }
 
 .coverOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.32) 100%
-  );
-}
-
-.card:hover .coverOverlay {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 121, 0, 0) 0%,
-    rgba(255, 121, 0, 0.42) 100%
-  );
 }
 
 .badge {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: #ff7900;
-  color: #ffffff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  top: -10%;
+  right: 10%;
+  z-index: 10;
 }
 
 .category {
@@ -101,7 +96,7 @@
 }
 
 .title {
-  margin: 16px 0 10px;
+  margin: 0px 0 10px;
   color: #093a88 !important;
 }
 

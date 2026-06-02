@@ -9,9 +9,9 @@ type GameCardProps = {
   title: string;
   description?: string;
   category: string;
-  status: string;
-  badge?: string;
   image: string;
+  status: string;
+  badge: string;
 };
 
 const { Title, Paragraph } = Typography;
@@ -20,44 +20,55 @@ const GameCard: React.FC<GameCardProps> = ({
   title,
   description,
   category,
+  image,
   status,
   badge,
-  image,
 }) => {
   return (
-    <Card className={styles.card} hoverable>
-      <div className={styles.header}>
-        <Title level={4} className={styles.title}>
-          {title}
-        </Title>
-        <div className={styles.subTitle}>{category ?? 'THỂ LOẠI'}</div>
-        {description ? (
-          <Paragraph className={styles.description}>{description}</Paragraph>
-        ) : null}
-      </div>
-
-      <div className={styles.cover}>
-        <div className={styles.cornerFlag} aria-hidden />
+    <div className={styles.container}>
+      {badge === 'HOT' && (
         <Image
-          src={image}
+          src={GameHot}
+          width={80}
+          height={120}
           alt={title}
-          fill
-          className={styles.image}
-          sizes="(max-width: 640px) 100vw, 360px"
+          className={styles.badge}
         />
-        <div className={styles.coverOverlay} />
-        <div className={styles.badge}>{badge ?? status}</div>
-      </div>
+      )}
 
-      <div className={styles.footer}>
-        <button type="button" className={styles.actionButton}>
-          <HomeOutlined /> Trang Chủ
-        </button>
-        <button type="button" className={styles.actionButton}>
-          <DownloadOutlined /> Tải xuống
-        </button>
-      </div>
-    </Card>
+      <Card className={styles.card} hoverable>
+        <div className={styles.header}>
+          <Title level={4} className={styles.title}>
+            {title}
+          </Title>
+          <div className={styles.subTitle}>{category ?? 'THỂ LOẠI'}</div>
+          {description ? (
+            <Paragraph className={styles.description}>{description}</Paragraph>
+          ) : null}
+        </div>
+
+        <div className={styles.cover}>
+          <div className={styles.cornerFlag} aria-hidden />
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className={styles.image}
+            sizes="(max-width: 640px) 100vw, 360px"
+          />
+          <div className={styles.coverOverlay} />
+        </div>
+
+        <div className={styles.footer}>
+          <button type="button" className={styles.actionButton}>
+            <HomeOutlined /> Trang Chủ
+          </button>
+          <button type="button" className={styles.actionButton}>
+            <DownloadOutlined /> Tải xuống
+          </button>
+        </div>
+      </Card>
+    </div>
   );
 };
 export default GameCard;
